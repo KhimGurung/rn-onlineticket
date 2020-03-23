@@ -17,7 +17,6 @@ import QRCode from 'react-native-qrcode-svg';
 function TicketDetailScreen({route}){
     const ticket = route.params.ticket;
     const company = route.params.company;
-    console.log(JSON.stringify(ticket));
     const companyLogo = {
         'bmw' : require('../assets/bmw.jpeg'),
         'gn' : require('../assets/gn.jpeg'),
@@ -51,7 +50,7 @@ function TicketDetailScreen({route}){
                     </View>
                     <View style={{top: -18}}>
                         <View style={styles.qrCodeView}>
-                            <View style={{backgroundColor: colors.white, opacity: ticket.valid ? 0 : 0.5, height: 250, width: 250,}} >
+                            <View style={{backgroundColor: colors.white, opacity: ticket.valid ? 1 : 0.5, height: 250, width: 250,}} >
                                 <QRCode value={JSON.stringify(ticket)}  size={250}/>
                                 
                             </View>
