@@ -1,14 +1,13 @@
 import React from 'react';
 import { 
     createDrawerNavigator,
-    DrawerContentScrollView,
     DrawerItemList,
     DrawerItem, } from '@react-navigation/drawer';
 import { View, StyleSheet } from 'react-native';
 import TicketStack from '../navigation/ticketStack';
 import { SimpleLineIcons, Ionicons, AntDesign, Entypo } from '@expo/vector-icons';
 import { colors } from '../constants/theme';
-import { Image, Text } from 'react-native-elements';
+import { Image } from 'react-native-elements';
 
 const DrawerNavigation = createDrawerNavigator();
 

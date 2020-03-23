@@ -1,9 +1,6 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
 import { NavigationContainer} from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { colors } from '../constants/theme';
-import { Button } from 'react-native-elements';
 
 import Login from '../screens/loginScreen';
 import DrawerNavigator from './drawer';
