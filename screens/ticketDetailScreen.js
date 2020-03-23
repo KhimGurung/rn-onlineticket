@@ -17,6 +17,7 @@ import QRCode from 'react-native-qrcode-svg';
 function TicketDetailScreen({route}){
     const ticket = route.params.ticket;
     const company = route.params.company;
+    console.log(JSON.stringify(ticket));
     const companyLogo = {
         'bmw' : require('../assets/bmw.jpeg'),
         'gn' : require('../assets/gn.jpeg'),
@@ -25,6 +26,10 @@ function TicketDetailScreen({route}){
         'rmv' : require('../assets/rmv.jpeg'),
         'sn' : require('../assets/sn.jpeg'),
         'logo' : require('../assets/logo.png'),
+    }
+    const ticketStatus = {
+        true  : require("../assets/used.png"),
+        false : require("../assets/expired.png"),
     }
     const logoName = company.logo.split(".")[0]
     return(
@@ -45,8 +50,15 @@ function TicketDetailScreen({route}){
                         </View>
                     </View>
                     <View style={{top: -18}}>
-                        <View style={{ width: '100%', borderTopLeftRadius: 10, borderTopRightRadius: 10, backgroundColor: 'white', zIndex: 1, paddingTop: 50, paddingBottom: 30, justifyContent:'center', alignItems: 'center' }}>
-                            <QRCode value="hello i am khim"  size={250}/>
+                        <View style={styles.qrCodeView}>
+                            <View style={{backgroundColor: colors.white, opacity: ticket.valid ? 0 : 0.5, height: 250, width: 250,}} >
+                                <QRCode value={JSON.stringify(ticket)}  size={250}/>
+                                
+                            </View>
+                            {
+                                !ticket.valid &&
+                                <Image source={ ticketStatus[ticket.used] } style={styles.invalidImage} />
+                            }
                             <Text style={{fontSize: 17, color: colors.tertiary, marginTop: 20}}>NO: {ticket.ticketId}</Text>
                         </View>
                         <TicketDivider style={{zIndex: 2,}}/>
@@ -108,7 +120,24 @@ const styles = StyleSheet.create({
     ticketData: {
         color: colors.white,
         fontSize: 16,
-    }
+    },
+    qrCodeView: { 
+        width: '100%', 
+        borderTopLeftRadius: 10, 
+        borderTopRightRadius: 10, 
+        backgroundColor: 'white', 
+        zIndex: 1, 
+        paddingTop: 50, 
+        paddingBottom: 30, 
+        justifyContent:'center', 
+        alignItems: 'center',
+    },
+    invalidImage: { 
+        width: 200, 
+        height: 200, 
+        resizeMode: 'contain', 
+        position:'absolute', 
+    },
 });
 
 export default TicketDetailScreen;
