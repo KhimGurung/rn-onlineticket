@@ -3,6 +3,7 @@
 It is a simple application that has a list of tickets. It is just a dummy application for demonstrating react native. Expo is used to develop the application. It covers implementation of:
 
 Stack Navigation
+
 Drawer Navigation
 
 svg
@@ -46,4 +47,20 @@ When the application initializes it renders the first stack navigator whose init
 - React-native-elements for some UI components
 
 **UI Design**
-UI design
+<table>
+  <tr>
+    <td><img src="./assets/uidesign/login.png" width="300" /></td>
+    <td><img src="./assets/uidesign/valid.png" width="300" /></td>
+    <td><img src="./assets/uidesign/all.png" width="300" /></td>
+  </tr>
+   <tr>
+    <td><img src="./assets/uidesign/invalid.png" width="300" /></td>
+    <td><img src="./assets/uidesign/sidemenu.png" width="300" /></td>
+    <td><img src="./assets/uidesign/detail.png" width="300" /></td>
+  </tr>
+   <tr>
+    <td><img src="./assets/uidesign/expaireddetail.png" width="300" /></td>
+    <td><img src="./assets/uidesign/useddetail.png" width="300" /></td>
+    <td><img src="./assets/uidesign/qrcode.png" width="300" /></td>
+  </tr>
+ </table>
